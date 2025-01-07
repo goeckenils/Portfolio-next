@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, easeOut } from "framer-motion";
 import { X } from "lucide-react";
 
 const menuItems = [
@@ -26,22 +26,29 @@ export function MegaMenu({ isOpen, onClose }: MegaMenuProps) {
           exit={{ opacity: 0 }}
           className="fixed inset-0 bg-background z-40"
         >
-          <div className="container mx-auto px-8 pt-32">
-            <button
-              onClick={onClose}
-              className="fixed top-8 right-8 z-50"
-              aria-label="Close menu"
+          <div className=" p-12 pt-32">
+            <motion.div
+              initial="hidden"
+              animate="visible"
+              exit="hidden"
+              variants={{
+                hidden: { opacity: 0 },
+                visible: {
+                  opacity: 1,
+                  transition: {
+                    staggerChildren: 0.2,
+                  },
+                },
+              }}
+              className="space-y-8"
             >
-              <X className="w-6 h-6" />
-            </button>
-
-            <div className="space-y-8">
               {menuItems.map((item) => (
                 <motion.div
                   key={item.id}
-                  initial={{ y: 20, opacity: 0 }}
-                  animate={{ y: 0, opacity: 1 }}
-                  exit={{ y: 20, opacity: 0 }}
+                  variants={{
+                    hidden: { y: 20, opacity: 0 },
+                    visible: { y: 0, opacity: 1, transition: { ease: easeOut } },
+                  }}
                   className="border-t border-current py-6"
                 >
                   <a
@@ -58,7 +65,7 @@ export function MegaMenu({ isOpen, onClose }: MegaMenuProps) {
                   </a>
                 </motion.div>
               ))}
-            </div>
+            </motion.div>
           </div>
         </motion.div>
       )}
