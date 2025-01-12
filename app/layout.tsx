@@ -3,27 +3,29 @@ import './globals.css';
 import type { Metadata } from 'next';
 import { ThemeProvider } from "@/components/theme-provider";
 import { Header } from "@/components/layout/header";
-
 import localFont from 'next/font/local'; // For local custom fonts
+import { Inter } from 'next/font/google'
 
+const inter = Inter({ subsets: ['latin'] })
 
 // Example: Load a local custom font
+/*
 const NeueHaasDisplay = localFont({
   src: [
     {
-      path: './public/fonts/NeueHaasDisplay-Medium.ttf',
+      path: "..public/fonts/NeueHaasDisplayMedium.ttf",
       weight: '400',
       style: 'normal',
     },
     {
-      path: './public/fonts/NeueHaasDisplay-Bold.ttf',
+      path: "..public/fonts/NeueHaasDisplayBold.ttf",
       weight: '700',
       style: 'bold',
     },
   ],
   display: 'swap', // Optional: improves performance by swapping fonts after loading
 });
-
+*/
 
 export const metadata: Metadata = {
   title: 'Nils Goecke - UI/UX Designer & Developer',
@@ -37,7 +39,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={NeueHaasDisplay.className}>
+      <body className={inter.className}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

@@ -1,6 +1,10 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { AnimatedText } from "@/components/AnimatedText"
+import Link from "next/link"
+
+
 
 export function Hero() {
   return (
@@ -11,23 +15,19 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h1 className="hero-title mb-8">
-            NILS GOECKE
-            <br />
-            WEBDEVELOPER &
-            <br />
-            DIGITAL DESIGNER
-          </h1>
+          <AnimatedText text="NILS GOECKE" className="hero-title"/>
+          <AnimatedText text="WEBDEVELOPER &" className="hero-title"/>
+          <AnimatedText text="DIGITAL DESIGNER" className="hero-title mb-8"/>
           
           <div className="inline-flex flex px-4 py-2 bg-foreground ">
-            <a 
-              href="#works" 
+            <Link
+              href="/work" 
               style={{marginTop:"-2px"}}
               className="items-center gap-2 text-sm text-white uppercase hover:opacity-50 transition-opacity"
             >
               See Projects
               <span className="text-xl text-white pl-2">→</span>
-            </a>
+            </Link>
           </div>
         </motion.div>
       </div>

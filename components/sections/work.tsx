@@ -10,11 +10,24 @@ const projects = [
     image: "https://images.unsplash.com/photo-1511988617509-a57c8a288659?auto=format&fit=crop&q=80&w=1000",
     tags: ["UX/UI PRODUCT DESIGN", "BRANDING", "PROBLEM SOLVING"],
   },
+  {
+    id: 1,
+    title: "ROUTINE BUILDER - IMPROVING THE SKINCARE PRODUCT SHOPPING EXPERIENCE",
+    image: "https://images.unsplash.com/photo-1511988617509-a57c8a288659?auto=format&fit=crop&q=80&w=1000",
+    tags: ["UX/UI PRODUCT DESIGN", "BRANDING", "PROBLEM SOLVING"],
+  },
+  {
+    id: 1,
+    title: "ROUTINE BUILDER - IMPROVING THE SKINCARE PRODUCT SHOPPING EXPERIENCE",
+    image: "https://images.unsplash.com/photo-1511988617509-a57c8a288659?auto=format&fit=crop&q=80&w=1000",
+    tags: ["UX/UI PRODUCT DESIGN", "BRANDING", "PROBLEM SOLVING"],
+  },
   // Add more projects as needed
 ];
 
 export function Work() {
   return (
+
     <section id="works" className="min-h-screen px-8 py-32">
       <div className="max-w-6xl mx-auto">
         <h2 className="section-title mb-16">WORKS</h2>

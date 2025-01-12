@@ -2,7 +2,6 @@
 "use client"
 
 import { Hero } from "@/components/sections/hero";
-import { Work } from "@/components/sections/work";
 import { Scene } from "@/components/three/Scene";
 
 export default function Home() {
@@ -11,7 +10,7 @@ export default function Home() {
 
       <main>
         <Hero />
-
+        <Scene/>
       </main>
     </>
   );

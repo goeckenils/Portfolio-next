@@ -5,11 +5,10 @@ import { OrbitControls, Environment } from "@react-three/drei";
 import { Suspense, useRef } from "react";
 import * as THREE from "three";
 import { useFrame } from "@react-three/fiber";
-import { useTheme } from "next-themes";
 
 function ChromeSphere() {
   const meshRef = useRef<THREE.Mesh>(null);
-  const { theme } = useTheme();
+
 
   useFrame((state, delta) => {
     if (meshRef.current) {
@@ -24,15 +23,13 @@ function ChromeSphere() {
       <meshStandardMaterial
         metalness={1}
         roughness={0.1}
-        envMapIntensity={theme === "dark" ? 0.5 : 1}
+        envMapIntensity={1}
       />
     </mesh>
   );
 }
 
 export function Scene() {
-  const { theme } = useTheme();
-  const isDark = theme === "dark";
 
   return (
     <div className="fixed inset-0 -z-10 transition-colors duration-300">
@@ -40,17 +37,17 @@ export function Scene() {
         camera={{ position: [0, 0, 4], fov: 50 }}
         gl={{ antialias: true }}
       >
-        <color attach="background" args={[isDark ? "#000000" : "#ffffff"]} />
+        <color attach="background" args={["#ffffff"]} />
         
         <Suspense fallback={null}>
           <ChromeSphere />
           
-          <Environment preset={isDark ? "night" : "studio"} />
+          <Environment preset={"studio"} />
           
-          <ambientLight intensity={isDark ? 0.2 : 0.5} />
+          <ambientLight intensity={0.5} />
           <directionalLight
             position={[5, 5, 5]}
-            intensity={isDark ? 0.5 : 1}
+            intensity={1}
             castShadow
           />
         </Suspense>
