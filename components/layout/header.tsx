@@ -5,6 +5,7 @@ import { MegaMenu } from "./mega-menu";
 import { Zap } from "lucide-react";
 import { ThemeToggle } from "../theme/theme-toggle";
 import { easeOut, motion } from "framer-motion";
+import Link from "next/link"
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -12,7 +13,8 @@ export function Header() {
   return (
     <>
     <header className="h-screen flex justify-between p-12 flex-col overlay">
-      <div className="top-bar flex justify-between flex-row">
+      <div className="top-bar flex justify-between flex-row overlay-content">
+      <Link  href="/" >
       <motion.div className="logo"
       whileHover={{ rotate: 180, transition: { duration: 0.4, ease: easeOut }}}>
       <svg width="48" height="46" viewBox="0 0 48 46" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -20,7 +22,7 @@ export function Header() {
 </svg>
 
       </motion.div>
-    
+      </Link>
       
       <button 
         className="menu-button"
@@ -30,7 +32,7 @@ export function Header() {
       </button>
 </div>
 
-      <div className="bottom-bar flex justify-between">      
+      <div className="bottom-bar flex justify-between overlay-content">      
         <div className="footer-text left">
         Bandelstrasse 9F<br />
         30171 Hannover

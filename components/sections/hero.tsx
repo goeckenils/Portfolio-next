@@ -11,7 +11,7 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h1 className="hero-title mb-12">
+          <h1 className="hero-title mb-8">
             NILS GOECKE
             <br />
             WEBDEVELOPER &
@@ -19,13 +19,14 @@ export function Hero() {
             DIGITAL DESIGNER
           </h1>
           
-          <div className="flex p-4 bg-foreground">
+          <div className="inline-flex flex px-4 py-2 bg-foreground ">
             <a 
               href="#works" 
-              className=" items-center gap-2 text-sm color-white uppercase hover:opacity-50 transition-opacity"
+              style={{marginTop:"-2px"}}
+              className="items-center gap-2 text-sm text-white uppercase hover:opacity-50 transition-opacity"
             >
               See Projects
-              <span className="text-xl color-white">→</span>
+              <span className="text-xl text-white pl-2">→</span>
             </a>
           </div>
         </motion.div>

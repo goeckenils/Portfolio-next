@@ -34,6 +34,10 @@
   width: 100%;
   height: 100%;
   z-index: 1000; /* Ensure it's on top of other content */
+  pointer-events: none
+}
+
+.overlay-content {
   pointer-events: auto
 }
 
@@ -52,4 +56,14 @@ cursor: pointer;
   line-height: 0.80;
   font-weight: bold;
 
+  }
+
+  body {
+    transition: opacity 0.5s ease-in-out, background-color 0.5s ease-in-out, transform 0.5s ease-in-out;
+  }
+  
+  .page-transition {
+    opacity: 0;
+    background-color: black;
+    transform: translateY(20px);
   }
